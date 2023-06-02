@@ -117,16 +117,36 @@ var choices = gatherData();
 
 // Write a function to based on the inputs above concatentate a string
 // of random characters
-
-
-// Declare variable to hold the resulting password string
-
-// declare variables
-
-//  write conditionals based on true/false values of the choices array
-
-// write a for loop to concatenate
-
+function generatePassword() {
+  // Declare variable to hold the resulting password string
+  var pass = "";
+  // declare variables
+  var amount = choices[0];
+  var lowercase = choices[1]
+  var uppercase = choices[2]
+  var numbers = choices[3]
+  var specials = choices[4]
+  var chosenChars = []
+  //  write conditionals based on true/false values of the choices array
+  if (lowercase) {
+     chosenChars = chosenChars.concat(lowercaseLetters)
+  }
+  if (uppercase) {
+    chosenChars = chosenChars.concat(uppercaseLetters)
+ } 
+  if (numbers) {
+    chosenChars = chosenChars.concat(numbers)
+  }
+  if (specials) {
+    chosenChars = chosenChars.concat(specialCharacters)
+ }
+  // write a for loop to concatenate
+  for (var i = 0; i < charAmount; i++) {
+    var randIndex = Math.floor(Math.random() * chosenChars.length);
+    pass += chosenChars[randIndex];
+  }
+  return pass
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
