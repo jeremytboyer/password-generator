@@ -97,16 +97,34 @@ const specialCharacters = [
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Gather user input
+var amount = Number(prompt("Please provide a number"));
+var lowercaseInput = confirm("Select OK to choose lowercase values");
+var uppercaseInput = confirm("Select OK to choose uppercase values");
+var numberInput = confirm("Select OK to choose number values");
+var specialCharsInput = confirm("Select OK to choose lowercase values");
+// Write a function to get all the inputs into an array
+function gatherData() {
+  return [
+    amount,
+    lowercaseInput,
+    uppercaseInput,
+    numberInput,
+    specialCharsInput,
+  ];
+}
+// Store choices in a new array
+var choices = gatherData();
 
-  // Declare variable to hold the resulting password string
+// Write a function to based on the inputs above concatentate a string
+// of random characters
 
-  // declare variables 
-  
+// Declare variable to hold the resulting password string
+
+// declare variables
+
 //  write conditionals based on true/false values of the choices array
 
-// write a for loop to concatenate 
-
-
+// write a for loop to concatenate
 
 // Write password to the #password input
 function writePassword() {
@@ -114,7 +132,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
