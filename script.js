@@ -101,7 +101,7 @@ var amount = Number(prompt("Please provide a number"));
 var lowercaseInput = confirm("Select OK to choose lowercase values");
 var uppercaseInput = confirm("Select OK to choose uppercase values");
 var numberInput = confirm("Select OK to choose number values");
-var specialCharsInput = confirm("Select OK to choose lowercase values");
+var specialCharsInput = confirm("Select OK to choose special character values");
 // Write a function to get all the inputs into an array
 function gatherData() {
   return [
@@ -122,30 +122,30 @@ function generatePassword() {
   var pass = "";
   // declare variables
   var amount = choices[0];
-  var lowercase = choices[1]
-  var uppercase = choices[2]
-  var numbers = choices[3]
-  var specials = choices[4]
-  var chosenChars = []
+  var lowercase = choices[1];
+  var uppercase = choices[2];
+  var numbers = choices[3];
+  var specials = choices[4];
+  var chosenChars = [];
   //  write conditionals based on true/false values of the choices array
   if (lowercase) {
-     chosenChars = chosenChars.concat(lowercaseLetters)
+    chosenChars = chosenChars.concat(lowercaseLetters);
   }
   if (uppercase) {
-    chosenChars = chosenChars.concat(uppercaseLetters)
- } 
+    chosenChars = chosenChars.concat(uppercaseLetters);
+  }
   if (numbers) {
-    chosenChars = chosenChars.concat(numbers)
+    chosenChars = chosenChars.concat(numbers);
   }
   if (specials) {
-    chosenChars = chosenChars.concat(specialCharacters)
- }
+    chosenChars = chosenChars.concat(specialCharacters);
+  }
   // write a for loop to concatenate
-  for (var i = 0; i < charAmount; i++) {
+  for (var i = 0; i < amount; i++) {
     var randIndex = Math.floor(Math.random() * chosenChars.length);
     pass += chosenChars[randIndex];
   }
-  return pass
+  return pass;
 }
 // Write password to the #password input
 function writePassword() {
