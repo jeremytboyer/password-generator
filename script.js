@@ -96,58 +96,15 @@ const specialCharacters = [
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-var amount = Number(prompt("Please privde a number"));
-var includeLowercase = confirm("Click OK to include lowercase letters");
-var includeUppercase = confirm("Click OK to include uppercase letters");
-var includeNumbers = confirm("Click OK to include nunbers");
-var includeSpecialCharacters = confirm(
-  "Click OK to include special characters"
-);
-function gatherData() {
-  return [
-    amount,
-    includeLowercase,
-    includeUppercase,
-    includeNumbers,
-    includeSpecialCharacters,
-  ];
-}
-
-var choices = gatherData();
-
-function generatePassword() {
- 
+// Gather user input
 
   // Declare variable to hold the resulting password string
-  var pass = ''
-   // declare variables 
-  var includeLowercase = choices[1]
-  var includeUppercase = choices[2];
-  var includeNumbers = choices[3];
-  var includeSpecialCharacters = choices[4]
-  var charAmount = choices[0]
-  var chosenChars = []
+
+  // declare variables 
+  
 //  write conditionals based on true/false values of the choices array
-  if (includeLowercase) {
-    chosenChars = chosenChars.concat(lowercaseLetters)
-  }
-  if (includeUppercase) {
-    chosenChars = chosenChars.concat(uppercaseLetters)
-  }
-  if (includeNumbers) {
-    chosenChars = chosenChars.concat(numbers)
-  }
-  if (includeSpecialCharacters) {
-    chosenChars = chosenChars.concat(specialCharacters)
-  }
+
 // write a for loop to concatenate 
-for (var i = 0; i < charAmount; i++) {
-    var randIndex = Math.floor(Math.random() * chosenChars.length);
-    pass += chosenChars[randIndex];
-  }
-  return pass
-}
 
 
 
