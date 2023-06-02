@@ -118,6 +118,7 @@ var choices = gatherData();
 // Write a function to based on the inputs above concatentate a string
 // of random characters
 
+
 // Declare variable to hold the resulting password string
 
 // declare variables
