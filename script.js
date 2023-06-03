@@ -96,28 +96,30 @@ const specialCharacters = [
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// Gather user input
-var amount = Number(prompt("Please provide a number"));
-var lowercaseInput = confirm("Select OK to choose lowercase values");
-var uppercaseInput = confirm("Select OK to choose uppercase values");
-var numberInput = confirm("Select OK to choose number values");
-var specialCharsInput = confirm("Select OK to choose special character values");
-// Write a function to get all the inputs into an array
-function gatherData() {
-  return [
-    amount,
-    lowercaseInput,
-    uppercaseInput,
-    numberInput,
-    specialCharsInput,
-  ];
-}
-// Store choices in a new array
-var choices = gatherData();
 
 // Write a function to based on the inputs above concatentate a string
 // of random characters
 function generatePassword() {
+  // Gather user input
+  var amount = Math.floor(Number(prompt("Please provide a number")));
+  var lowercaseInput = confirm("Select OK to choose lowercase values");
+  var uppercaseInput = confirm("Select OK to choose uppercase values");
+  var numberInput = confirm("Select OK to choose number values");
+  var specialCharsInput = confirm(
+    "Select OK to choose special character values"
+  );
+  // Write a function to get all the inputs into an array
+  function gatherData() {
+    return [
+      amount,
+      lowercaseInput,
+      uppercaseInput,
+      numberInput,
+      specialCharsInput,
+    ];
+  }
+  // Store choices in a new array
+  var choices = gatherData();
   // Declare variable to hold the resulting password string
   var pass = "";
   // declare variables
@@ -128,6 +130,7 @@ function generatePassword() {
   var specials = choices[4];
   var chosenChars = [];
   //  write conditionals based on true/false values of the choices array
+  //  and concat the values on an empty array
   if (lowercase) {
     chosenChars = chosenChars.concat(lowercaseLetters);
   }
