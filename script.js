@@ -143,6 +143,10 @@ function generatePassword() {
   if (specials) {
     chosenChars = chosenChars.concat(specialCharacters);
   }
+  if (!lowercase && !uppercase && !numbers1 && !specials) {
+    alert("please try again");
+    return;
+  }
   // write a for loop to concatenate
   for (var i = 0; i < amount; i++) {
     var randIndex = Math.floor(Math.random() * chosenChars.length);
