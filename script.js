@@ -126,7 +126,7 @@ function generatePassword() {
   var amount = choices[0];
   var lowercase = choices[1];
   var uppercase = choices[2];
-  var numbers = choices[3];
+  var numbers1 = choices[3];
   var specials = choices[4];
   var chosenChars = [];
   //  write conditionals based on true/false values of the choices array
@@ -137,7 +137,7 @@ function generatePassword() {
   if (uppercase) {
     chosenChars = chosenChars.concat(uppercaseLetters);
   }
-  if (numbers) {
+  if (numbers1) {
     chosenChars = chosenChars.concat(numbers);
   }
   if (specials) {
