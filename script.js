@@ -101,7 +101,11 @@ var generateBtn = document.querySelector("#generate");
 // of random characters
 function generatePassword() {
   // Gather user input
-  var amount = Math.floor(Number(prompt("Please provide a number")));
+  var amount = Math.floor(Number(prompt("Please provide a number between 8 and 128")));
+  if (amount < 8 || amount > 128) {
+    alert('Please choose a number between 8 and 128 and try again')
+    return
+  }
   var lowercaseInput = confirm("Select OK to choose lowercase values");
   var uppercaseInput = confirm("Select OK to choose uppercase values");
   var numberInput = confirm("Select OK to choose number values");
